@@ -9,12 +9,12 @@ module.exports = {
         html: './src/templates/'
     },
     dist: {
-        root: './dist/',
-        assets: './dist/assets/',
-        css: './dist/css/',
-        img: './dist/assets/img/',
-        icons: './dist/assets/img/icons',
-        js:  './dist/js/'
+        root: './public/dist/',
+        assets: './public/dist/assets/',
+        css: './public/dist/css/',
+        img: './public/dist/assets/img/',
+        icons: './public/dist/assets/img/icons',
+        js:  './public/dist/js/'
     },
     pkgm: {
         bower: './bower_components',

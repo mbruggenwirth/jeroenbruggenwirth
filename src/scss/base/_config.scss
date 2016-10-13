@@ -1,0 +1,26 @@
+$mapColorPalette: (
+    black:      ( base: #000 ),
+    white:      ( base: #fff ),
+    gray:       (
+        light:          #d8d8d8 ,
+        base:           #a9a9a9 ,
+        dark:           #2f2f2f ,
+    )
+);
+
+$mapFontWeight: (
+    normal:             400,
+    semibold:           600,
+    bold:               700,
+);
+
+// Font family
+$mapFontFamily: (
+      primary:              "Open Sans",
+);
+
+
+$mapTransition: (
+    duration:   .2s,
+    ease: cubic-bezier( .5, .15, .5, .85 ),
+);

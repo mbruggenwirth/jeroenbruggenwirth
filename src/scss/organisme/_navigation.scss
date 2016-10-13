@@ -1,0 +1,29 @@
+.navigation {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    &__container {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        margin-left: 30px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-end;
+        margin-right: 15px;
+        list-style: none;
+
+        a {
+            color: palColor( gray );
+            font-size: 12px;
+            font-weight: fontWeight( bold );
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover { color: palColor( black ); }
+        }
+    }
+}

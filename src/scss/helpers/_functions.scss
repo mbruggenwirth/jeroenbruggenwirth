@@ -1,0 +1,23 @@
+@function getValueIfKeyExists( $map, $key ) {
+    @if map-has-key( $map, $key ) {
+        @return map_get( $map, $key );
+    }
+
+    @warn "Unknown `#{$key}` in $map.";
+    @return null;
+}
+
+@function palColor( $strKey, $strTone: 'base' ) {
+    @return getValueIfKeyExists(
+          getValueIfKeyExists( $mapColorPalette, $strKey )
+        , $strTone
+    );
+}
+
+@function fontFamily( $strKey ) {
+    @return getValueIfKeyExists( $mapFontFamily, $strKey );
+}
+
+@function fontWeight( $strKey ) {
+    @return getValueIfKeyExists( $mapFontWeight, $strKey );
+}

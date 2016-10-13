@@ -25,12 +25,6 @@ module.exports = function( done ) {
         cascade: false
     } ) )
     .pipe( gulp.dest( paths.dist.css ) )
-    .pipe( minifyCss( {
-        keepSpecialComments: 0
-    } ) )
-    .pipe( gzip() )
-    .pipe( rename( { extname: '.min.css' } ) )
-    .pipe( gulp.dest( paths.dist.css ) )
     .pipe( livereload() )
     .on( 'end', done );
 }
