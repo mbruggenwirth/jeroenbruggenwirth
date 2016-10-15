@@ -24,3 +24,7 @@ $mapTransition: (
     duration:   .2s,
     ease: cubic-bezier( .5, .15, .5, .85 ),
 );
+
+
+$screen-xs-max: 768px;
+$screen-sm-max: 992px;

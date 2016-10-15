@@ -1,0 +1,48 @@
+.slider {
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+
+    &__container {
+        position: relative;
+        width: 40000px;
+        height: 100%;
+    }
+
+    &__item {
+        display: inline-block;
+        float: left;
+        padding-right: 20px;
+        height: 100%;
+        opacity: .3;
+        transition: opacity .3s ease-in-out;
+        cursor: pointer;
+
+        &.is-current {
+            opacity: 1;
+            cursor: auto;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top:  50%;
+        width: 20px;
+        height: 40px;
+        padding: 5px;
+        transform: translateY( -50% );
+        cursor: pointer;
+        z-index: 1000;
+
+        &:hover {
+            background-color: palColor( black );
+            path { stroke: palColor( white ); }
+        }
+
+        &--prev { left: 20px; }
+        &--next { right: 20px; }
+
+        path { stroke: palColor( gray ); }
+    }
+}

@@ -20,22 +20,24 @@
     	{% endblock %}
     </head>
     <body>
+        <div class="flex-container">
+            <div class="flex-header">
+                {% block header %}
+        	    {% endblock %}
+            </div>
 
-        {% block header %}
-    	{% endblock %}
+            <div class="flex-main">
+            	{% block content %}
+            	{% endblock %}
+            </div>
 
-    	{% block content %}
-    	{% endblock %}
+        	{% block modals	 %}
+        	{% endblock %}
 
-    	{% block footer %}
-    	{% endblock %}
-
-    	{% block modals	 %}
-    	{% endblock %}
-
+        </div>
 
     	{% block scripts %}
-    		<script src="../dist/js/app.js"></script>
+    		<script src="/dist/js/app.js"></script>
     	{% endblock %}
     </body>
 </html>

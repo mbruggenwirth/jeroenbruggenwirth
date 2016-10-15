@@ -1,14 +1,99 @@
 body {
   margin: 0;
   padding: 50px;
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  font-size: 12px;
+  line-height: 1.8; }
+
+h1 {
+  font-size: 18px;
+  text-transform: uppercase; }
 
 del {
   color: #000; }
 
+.flex-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: calc( 100vh - 100px);
+  overflow: hidden; }
+  .flex-container > .flex-main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto; }
+
+.image {
+  max-width: 100%;
+  width: auto;
+  height: 100%; }
+
+.project {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%; }
+  .project__info {
+    padding-top: 10px;
+    padding-right: 40px;
+    width: 250px;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0; }
+  .project__description {
+    font-size: 12px;
+    color: #a9a9a9; }
+  .project__slider {
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    width: 100%; }
+
+.slider {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden; }
+  .slider__container {
+    position: relative;
+    width: 40000px;
+    height: 100%; }
+  .slider__item {
+    display: inline-block;
+    float: left;
+    padding-right: 20px;
+    height: 100%;
+    opacity: .3;
+    transition: opacity .3s ease-in-out;
+    cursor: pointer; }
+    .slider__item.is-current {
+      opacity: 1;
+      cursor: auto; }
+  .slider__nav {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 40px;
+    padding: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000; }
+    .slider__nav:hover {
+      background-color: #000; }
+      .slider__nav:hover path {
+        stroke: #fff; }
+    .slider__nav--prev {
+      left: 20px; }
+    .slider__nav--next {
+      right: 20px; }
+    .slider__nav path {
+      stroke: #a9a9a9; }
+
 .header {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding-bottom: 50px; }
   .header__logo {
     display: -ms-flexbox;
     display: flex;
@@ -75,7 +160,8 @@ del {
       font-size: 12px;
       font-weight: 700;
       text-decoration: none;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      line-height: 1; }
       .navigation__item a:hover {
         color: #000; }
     .navigation__item.is-active > a {

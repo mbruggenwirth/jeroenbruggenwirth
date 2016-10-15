@@ -2,4 +2,11 @@
 {% extends "_layout" %}
 
 {% block content %}
+    <div class="project__featured">
+        {% if entry and entry.homeFeatured %}
+            {% for image in entry.homeFeatured %}
+                <img class="image" src="{{ image.getUrl() }}" alt="{{ image.title }}">
+            {% endfor %}
+        {% endif %}
+    </div>
 {% endblock %}

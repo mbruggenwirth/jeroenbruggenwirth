@@ -2,6 +2,13 @@ body {
     margin: 0;
     padding: 50px;
     font-family: fontFamily( primary );
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+h1 {
+    font-size: 18px;
+    text-transform: uppercase;
 }
 
 del { color: palColor( black ); }
