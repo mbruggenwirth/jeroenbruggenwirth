@@ -25,5 +25,45 @@
 
             &:hover { color: palColor( black ); }
         }
+
+        &.is-active > a { color: palColor( black ); }
+    }
+
+    &__submenu {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        padding-top: 5px;
+        transform: translateY( 100% );
+        padding-left: 10px;
+        pointer-events: none;
+
+        > li {
+            transform: translateX( -10px );
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            opacity: 0;
+            @for $i from 1 through 5 {
+                &:nth-child( #{$i} ) {
+                    transition-delay: calc( .05s * #{$i} );
+                }
+            }
+        }
+    }
+
+    &--has-children {
+        position: relative;
+
+        &:hover,
+        &.is-active {
+            > .navigation__submenu {
+                pointer-events: all;
+
+                > li {
+                    opacity: 1;
+                    transform: translateX( 0 );
+                }
+            }
+        }
     }
 }

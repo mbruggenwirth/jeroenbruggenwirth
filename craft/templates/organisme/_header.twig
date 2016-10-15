@@ -3,29 +3,26 @@
         <span>Jeroen Bruggenwirth</span>
         <span>Photographer</span>
     </a>
-    <nav class="navigation__container">
-        <ul class="navigation navigation--left">
-            <li class="navigation__item">
-                <a href="#">Foreign field</a>
-            </li>
-            <li class="navigation__item">
-                <a href="#">Rhenus Encyclopedia</a>
-            </li>
-            <li class="navigation__item">
-                <a href="#">The Great New Eastern</a>
-            </li>
-            <li class="navigation__item">
-                <a href="#">Wild<del>life</del>light</a>
-            </li>
-        </ul>
 
-        <ul class="navigation navigation--left">
-            <li class="navigation__item">
-                <a href="#">About</a>
-            </li>
-            <li class="navigation__item">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+    {% set pages = craft.entries.section('pages') %}
+    {% set projects = craft.entries.section('projects') %}
+
+    {% set navigation = [projects, pages] %}
+
+    <nav class="navigation__container">
+        {% for navi in navigation %}
+            <ul class="navigation navigation--left">
+                {% nav item in navi %}
+                <li class="navigation__item{% if item.hasDescendants() %} navigation--has-children {% endif %}{{ item.id == entry.id ? ' is-active ' }} {{ item.isAncestorOf(entry) ? ' is-active' }}" >
+                    <a href="{{ item.url }}">{{ item.title|raw }}</a>
+                    {% ifchildren %}
+                        <ul class="navigation__submenu">
+                            {% children %}
+                        </ul>
+                    {% endifchildren %}
+                </li>
+                {% endnav %}
+            </ul>
+        {% endfor %}
+    </ul>
 </header>
