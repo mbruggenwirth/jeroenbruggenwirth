@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 body {
   margin: 0;
   padding: 50px;
@@ -8,6 +11,19 @@ body {
 h1 {
   font-size: 18px;
   text-transform: uppercase; }
+
+h2 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+p {
+  font-size: 12px;
+  color: #a9a9a9; }
+
+a {
+  color: #a9a9a9;
+  text-decoration: underline; }
 
 del {
   color: #000; }
@@ -24,6 +40,33 @@ del {
     display: flex;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto; }
+  .flex-container.flex--normal {
+    height: auto; }
+
+.page__body {
+  width: 940px;
+  margin: 0 auto; }
+  @media (max-width: 940px) {
+    .page__body {
+      width: 620px; } }
+
+.page__header {
+  width: 100%;
+  margin-bottom: 50px; }
+  .page__header img {
+    width: 100%;
+    height: auto; }
+
+.page__content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%; }
+  .page__content--item {
+    width: 48%; }
 
 .image {
   max-width: 100%;
@@ -34,6 +77,13 @@ del {
   display: -ms-flexbox;
   display: flex;
   width: 100%; }
+  .project__featured {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .project__featured > .image {
+      width: 49%; }
   .project__info {
     padding-top: 10px;
     padding-right: 40px;

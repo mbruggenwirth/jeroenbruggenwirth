@@ -1,5 +1,34 @@
 {% extends '_layout' %}
 
+{% block pageClass %}flex--normal{% endblock %}
+
 {% block content %}
-    {{ entry.projectName| raw }}
+    {% set blocks = entry.body %}
+    <div class="page__body">
+
+        <div class="page__header">
+            {% for images in blocks %}
+                {% if images.type == 'headerImage' %}
+                    {% for image in images.headerImage %}
+                        <img src="{{ image.getUrl() }}" alt="{{ image.title }}" />
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="page__section">
+            {% for block in blocks %}
+                {% if block.type == 'subHeader' %}
+                    <h2>{{ block.subHeader}}</h2>
+                {% endif %}
+            {% endfor %}
+
+            <div class="page__content">
+                {% for content in blocks %}
+                    {% if content.type == 'bodyContent' %}
+                        <div class="page__content--item">{{ content.bodyContent }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,3 +1,4 @@
+* { box-sizing: border-box; }
 body {
     margin: 0;
     padding: 50px;
@@ -9,6 +10,22 @@ body {
 h1 {
     font-size: 18px;
     text-transform: uppercase;
+}
+
+h2 {
+    font-size: 12px;
+    font-weight: fontWeight( bold );
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 12px;
+    color: palColor( gray );
+}
+
+a {
+    color: palColor( gray );
+    text-decoration: underline;
 }
 
 del { color: palColor( black ); }

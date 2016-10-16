@@ -25278,22 +25278,25 @@ require('gsap');
 {
     var Slider = function(el){
         const slider = this.slider = document.getElementById('slider');
-        const container = this.container = document.getElementById('slider').querySelector('.slider__container');
-        const items = this.items = Array.from(slider.querySelectorAll('.slider__item'));
-        const self = this;
-        const begin = this.begin = 1;
 
-        imagesLoaded( items, function( instance ) {
-            self._setWidth();
-            self._setHeight();
-            self._bindEvents();
-            TweenMax.to(slider, .5, { alpha: 1, delay: 1 } );
-        });
+        if (slider) {
+            const container = this.container = document.getElementById('slider').querySelector('.slider__container');
+            const items = this.items = Array.from(slider.querySelectorAll('.slider__item'));
+            const self = this;
+            const begin = this.begin = 1;
 
-        window.addEventListener('resize', _.debounce(function(){
-            self._setWidth();
-            self._setHeight();
-        }, 200 ))
+            imagesLoaded( items, function( instance ) {
+                self._setWidth();
+                self._setHeight();
+                self._bindEvents();
+                TweenMax.to(slider, .5, { alpha: 1, delay: 1 } );
+            });
+
+            window.addEventListener('resize', _.debounce(function(){
+                self._setWidth();
+                self._setHeight();
+            }, 200 ))
+        }
     }
 
     Slider.prototype._bindEvents = function () {

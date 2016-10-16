@@ -1,0 +1,29 @@
+.page {
+    &__body {
+        width: 940px;
+        margin: 0 auto;
+
+        @include respondTo( 940px ) {
+            width: 620px;
+        };
+    }
+
+    &__header {
+        width: 100%;
+        margin-bottom: 50px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &--item { width: 48%; }
+    }
+}

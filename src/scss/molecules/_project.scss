@@ -2,6 +2,13 @@
     display: flex;
     width: 100%;
 
+    &__featured {
+        display: flex;
+        justify-content: space-between;
+
+        > .image { width: 49%; }
+    }
+
     &__info {
         padding-top: 10px;
         padding-right: 40px;
