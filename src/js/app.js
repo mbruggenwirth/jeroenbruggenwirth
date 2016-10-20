@@ -62,3 +62,11 @@ require('gsap');
 
     new Slider('slider');
 }
+
+var hamburger = document.getElementById('hamburger');
+
+hamburger.addEventListener('click', function(){
+    let menu = document.querySelector('.navigation__container');
+    this.classList.toggle('is-open');
+    menu.classList.toggle('is-open');
+})

@@ -8,6 +8,10 @@
         position: relative;
         width: 40000px;
         height: 100%;
+
+        @include phone {
+            width: 100% !important;
+        };
     }
 
     &__item {
@@ -23,6 +27,15 @@
             opacity: 1;
             cursor: auto;
         }
+
+        @include phone {
+            opacity: 1;
+            
+            img {
+                width: 100%;
+                height: auto !important;
+            }
+        };
     }
 
     &__nav {

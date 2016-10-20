@@ -35,6 +35,9 @@ del {
   flex-direction: column;
   height: calc( 100vh - 100px);
   overflow: hidden; }
+  @media (max-width: 768px) {
+    .flex-container {
+      height: auto; } }
   .flex-container > .flex-main {
     display: -ms-flexbox;
     display: flex;
@@ -68,6 +71,34 @@ del {
   .page__content--item {
     width: 48%; }
 
+.i_would_like_to_buy_a_hamburger {
+  display: none;
+  position: fixed;
+  left: 50px;
+  width: 25px;
+  height: 30px;
+  z-index: 10000; }
+  .i_would_like_to_buy_a_hamburger span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin: 4px 0;
+    background-color: #000;
+    transform-origin: 50% 50%;
+    transition: transform .2s ease-in-out, top .2s ease-in-out, bottom .2s ease-in-out; }
+  .i_would_like_to_buy_a_hamburger.is-open span:nth-child(2) {
+    opacity: 0; }
+  .i_would_like_to_buy_a_hamburger.is-open span:first-child {
+    top: 8px;
+    transform: rotate(45deg); }
+  .i_would_like_to_buy_a_hamburger.is-open span:last-child {
+    bottom: 8px;
+    transform: rotate(-45deg); }
+  @media (max-width: 768px) {
+    .i_would_like_to_buy_a_hamburger {
+      display: inline-block; } }
+
 .image {
   max-width: 100%;
   width: auto;
@@ -77,6 +108,9 @@ del {
   display: -ms-flexbox;
   display: flex;
   width: 100%; }
+  @media (max-width: 768px) {
+    .project {
+      display: block; } }
   .project__featured {
     display: -ms-flexbox;
     display: flex;
@@ -92,6 +126,9 @@ del {
     flex-grow: 1;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .project__info {
+        width: 100%; } }
   .project__description {
     font-size: 12px;
     color: #a9a9a9; }
@@ -109,6 +146,9 @@ del {
     position: relative;
     width: 40000px;
     height: 100%; }
+    @media (max-width: 768px) {
+      .slider__container {
+        width: 100% !important; } }
   .slider__item {
     display: inline-block;
     float: left;
@@ -120,6 +160,12 @@ del {
     .slider__item.is-current {
       opacity: 1;
       cursor: auto; }
+    @media (max-width: 768px) {
+      .slider__item {
+        opacity: 1; }
+        .slider__item img {
+          width: 100%;
+          height: auto !important; } }
   .slider__nav {
     position: absolute;
     top: 50%;
@@ -144,6 +190,10 @@ del {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 50px; }
+  @media (max-width: 768px) {
+    .header {
+      -ms-flex-pack: end;
+      justify-content: flex-end; } }
   .header__logo {
     display: -ms-flexbox;
     display: flex;
@@ -152,7 +202,9 @@ del {
     align-items: flex-end;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 200px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 185px;
     padding-right: 10px;
     border-right: 2px solid #000;
     color: #000;
@@ -170,6 +222,10 @@ del {
         animation: logoMoveIn 1s forwards; }
       .header__logo span:last-child {
         animation: logoMoveInDelayed 1.5s forwards; }
+    @media (max-width: 992px) {
+      .header__logo {
+        width: 160px;
+        font-size: 12px; } }
 
 @keyframes logoMoveIn {
   0% {
@@ -190,6 +246,10 @@ del {
   display: flex;
   padding: 0;
   margin: 0; }
+  @media (max-width: 768px) {
+    .navigation {
+      display: block;
+      padding: 80px 0; } }
   .navigation__container {
     display: -ms-flexbox;
     display: flex;
@@ -198,6 +258,21 @@ del {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin-left: 30px; }
+    @media (max-width: 768px) {
+      .navigation__container {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        transform: translateX(-100%);
+        transition: transform .5s ease-in-out;
+        background-color: #fff;
+        z-index: 1000; }
+        .navigation__container.is-open {
+          transform: translateX(0); } }
   .navigation__item {
     display: -ms-flexbox;
     display: flex;
@@ -214,6 +289,13 @@ del {
       line-height: 1; }
       .navigation__item a:hover {
         color: #000; }
+    @media (max-width: 768px) {
+      .navigation__item {
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 15px 0; }
+        .navigation__item a {
+          font-size: 16px; } }
     .navigation__item.is-active > a {
       color: #000; }
   .navigation__submenu {

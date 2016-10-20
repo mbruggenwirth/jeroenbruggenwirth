@@ -4,12 +4,14 @@
     height: calc( 100vh - 100px );
     overflow: hidden;
 
+    @include phone {
+        height: auto;
+    };
+
     > .flex-main {
         display: flex;
         flex: 0 1 auto;
     }
 
-    &.flex--normal {
-        height: auto;
-    }
+    &.flex--normal { height: auto; }
 }
