@@ -1,3 +1,4 @@
+$ = require('jquery');
 _ = require('lodash');
 imagesLoaded = require('imagesloaded');
 require('gsap');
@@ -69,4 +70,8 @@ hamburger.addEventListener('click', function(){
     let menu = document.querySelector('.navigation__container');
     this.classList.toggle('is-open');
     menu.classList.toggle('is-open');
+})
+
+$('.navigation--has-children > a').click(function(e){
+    e.preventDefault();
 })

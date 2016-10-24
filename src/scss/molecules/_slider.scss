@@ -3,6 +3,7 @@
     width: 100%;
     opacity: 0;
     overflow: hidden;
+    overflow-x: scroll;
 
     &__container {
         position: relative;
@@ -19,18 +20,15 @@
         float: left;
         padding-right: 20px;
         height: 100%;
-        opacity: .3;
         transition: opacity .3s ease-in-out;
         cursor: pointer;
 
         &.is-current {
-            opacity: 1;
             cursor: auto;
         }
 
         @include phone {
-            opacity: 1;
-            
+
             img {
                 width: 100%;
                 height: auto !important;

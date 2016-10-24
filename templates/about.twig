@@ -1,0 +1,24 @@
+{% extends '_layout' %}
+
+{% block pageClass %}flex--normal{% endblock %}
+
+{% block content %}
+    <div class="page__body">
+        <div class="page__content">
+            <div class="page__content--item">
+                <h2>Artist Statement</h2>
+                {{ entry.artistStatement }}
+            </div>
+            <div class="page__content--item" style="background-image:url({{ entry.aboutImage.first.url }})">
+            </div>
+        </div>
+        <div class="page__content">
+            <div class="page__content--item">
+                {{ entry.publications }}
+            </div>
+            <div class="page__content--item">
+                {{ entry.exhibitions }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

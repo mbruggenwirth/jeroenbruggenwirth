@@ -40,7 +40,7 @@
     "gulp-watch": "^4.2.4",
     "imagemin-pngquant": "^4.1.0",
     "imagesloaded": "^4.1.1",
-    "jquery": "^2.1.4",
+    "jquery": "^2.2.4",
     "jquery-bridget": "^1.1.0",
     "jquery-ui": "^1.10.5",
     "jquery-validation": "^1.14.0",

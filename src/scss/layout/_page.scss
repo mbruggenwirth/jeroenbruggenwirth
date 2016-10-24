@@ -21,9 +21,13 @@
     &__content {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
         width: 100%;
+        margin-top: 30px;
 
-        &--item { width: 48%; }
+        &--item {
+            width: 48%;
+            background-size: cover;
+            background-position: center;
+        }
     }
 }

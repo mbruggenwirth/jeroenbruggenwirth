@@ -25,9 +25,6 @@ a {
   color: #a9a9a9;
   text-decoration: underline; }
 
-del {
-  color: #000; }
-
 .flex-container {
   display: -ms-flexbox;
   display: flex;
@@ -65,11 +62,12 @@ del {
   display: flex;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 100%; }
+  width: 100%;
+  margin-top: 30px; }
   .page__content--item {
-    width: 48%; }
+    width: 48%;
+    background-size: cover;
+    background-position: center; }
 
 .i_would_like_to_buy_a_hamburger {
   display: none;
@@ -121,7 +119,7 @@ del {
   .project__info {
     padding-top: 10px;
     padding-right: 40px;
-    width: 250px;
+    width: 300px;
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-negative: 0;
@@ -131,7 +129,9 @@ del {
         width: 100%; } }
   .project__description {
     font-size: 12px;
-    color: #a9a9a9; }
+    color: #a9a9a9;
+    height: 100%;
+    overflow-y: scroll; }
   .project__slider {
     -ms-flex-positive: 0;
     flex-grow: 0;
@@ -141,7 +141,8 @@ del {
   position: relative;
   width: 100%;
   opacity: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  overflow-x: scroll; }
   .slider__container {
     position: relative;
     width: 40000px;
@@ -154,18 +155,14 @@ del {
     float: left;
     padding-right: 20px;
     height: 100%;
-    opacity: .3;
     transition: opacity .3s ease-in-out;
     cursor: pointer; }
     .slider__item.is-current {
-      opacity: 1;
       cursor: auto; }
     @media (max-width: 768px) {
-      .slider__item {
-        opacity: 1; }
-        .slider__item img {
-          width: 100%;
-          height: auto !important; } }
+      .slider__item img {
+        width: 100%;
+        height: auto !important; } }
   .slider__nav {
     position: absolute;
     top: 50%;
@@ -304,9 +301,9 @@ del {
     position: absolute;
     bottom: 0;
     margin: 0;
-    padding-top: 5px;
+    padding-top: 8px;
     transform: translateY(100%);
-    padding-left: 10px;
+    padding-left: 20px;
     pointer-events: none; }
     .navigation__submenu > li {
       transform: translateX(-10px);

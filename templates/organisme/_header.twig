@@ -9,25 +9,28 @@
         <span>Photographer</span>
     </a>
 
-    {% set pages = craft.entries.section('pages') %}
-    {% set projects = craft.entries.section('projects') %}
-
-    {% set navigation = [projects, pages] %}
+    {% set navigation = craft.entries.section('projects') %}
 
     <nav class="navigation__container">
-        {% for navi in navigation %}
-            <ul class="navigation navigation--left">
-                {% nav item in navi %}
-                <li class="navigation__item{% if item.hasDescendants() %} navigation--has-children {% endif %}{{ item.id == entry.id ? ' is-active ' }} {{ item.isAncestorOf(entry) ? ' is-active' }}" >
-                    <a href="{{ item.url }}">{{ item.title|raw }}</a>
-                    {% ifchildren %}
-                        <ul class="navigation__submenu">
-                            {% children %}
-                        </ul>
-                    {% endifchildren %}
-                </li>
-                {% endnav %}
-            </ul>
-        {% endfor %}
+        <ul class="navigation navigation--left">
+            {% nav item in navigation %}
+            <li class="navigation__item{% if item.hasDescendants() %} navigation--has-children {% endif %}{{ item.id == entry.id ? ' is-active ' }} {{ item.isAncestorOf(entry) ? ' is-active' }}" >
+                <a href="{{ item.url }}">{{ item.title|raw }}</a>
+                {% ifchildren %}
+                    <ul class="navigation__submenu">
+                        {% children %}
+                    </ul>
+                {% endifchildren %}
+            </li>
+            {% endnav %}
+        </ul>
+        <ul class="navigation navigation--left">
+            <li class="navigation__item {{ entry.slug == 'about' ? ' is-active ' }}" >
+                <a href="{{siteUrl}}about">About</a>
+            </li>
+            <li class="navigation__item {{ entry.slug == 'contact' ? ' is-active ' }}" >
+                <a href="{{siteUrl}}contact">Contact</a>
+            </li>
+        </ul>
     </ul>
 </header>
