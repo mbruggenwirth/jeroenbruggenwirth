@@ -3,11 +3,9 @@
     width: 100%;
     opacity: 0;
     overflow: hidden;
-    overflow-x: scroll;
 
     &__container {
         position: relative;
-        width: 40000px;
         height: 100%;
 
         @include phone {
@@ -28,7 +26,8 @@
         }
 
         @include phone {
-
+            padding-right: 0;
+            
             img {
                 width: 100%;
                 height: auto !important;
@@ -36,15 +35,32 @@
         };
     }
 
+    &__navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -.5px;
+
+        &.hidden { display: none; }
+
+        @include phone {
+            display: none;
+        };
+    }
+
     &__nav {
         position: absolute;
         top:  50%;
         width: 20px;
-        height: 40px;
+        height: 30px;
         padding: 5px;
         transform: translateY( -50% );
         cursor: pointer;
         z-index: 1000;
+        user-select: none;
 
         &:hover {
             background-color: palColor( black );

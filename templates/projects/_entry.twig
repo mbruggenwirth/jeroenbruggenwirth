@@ -4,19 +4,24 @@
     <div class="project">
         <div class="project__info">
             <h1> {{ entry.projectName| raw }} </h1>
+            <div class="slider__navigation">
+                <div>Navigate through photos</div>
+                <div class="">
+                    <svg class="slider__nav--prev slider__nav" viewBox="-5 -1 18 32">
+                        <path class="line-top" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M10.4,0.5l-13.8,14"></path>
+                        <path class="line-bottom" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M10.7,28.7l-13.8-14"></path>
+                    </svg>
+                    <svg class="slider__nav--next slider__nav" viewBox="-5 -1 18 32">
+                        <path class="line-top" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M-2.7,1.3l13.8,14"></path>
+                        <path class="line-bottom" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M-2.4,29.5l13.8-14"></path>
+                    </svg>
+                </div>
+            </div>
             <div class="project__description">
                 {{ entry.projectText }}
             </div>
         </div>
         <div id="slider" class="project__slider slider">
-            {# <svg class="slider__nav--prev slider__nav" viewBox="-5 -1 18 32">
-                <path class="line-top" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M10.4,0.5l-13.8,14"></path>
-                <path class="line-bottom" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M10.7,28.7l-13.8-14"></path>
-            </svg>
-            <svg class="slider__nav--next slider__nav" viewBox="-5 -1 18 32">
-                <path class="line-top" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M-2.7,1.3l13.8,14"></path>
-                <path class="line-bottom" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" d="M-2.4,29.5l13.8-14"></path>
-            </svg> #}
             <div class="slider__container">
                 {% for image in entry.photos %}
                     <li class="slider__item {{ loop.index0 == 0 ? 'is-current' }}" data-id="{{ loop.index0 }}"> <img src="{{ image.getUrl() }}" alt="{{ image.title }}"> </li>
