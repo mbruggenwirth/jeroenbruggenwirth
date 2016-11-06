@@ -5,7 +5,9 @@
     <div class="project__featured">
         {% if entry and entry.homeFeatured %}
             {% for image in entry.homeFeatured %}
+            <div>
                 <img class="image" src="{{ image.getUrl() }}" alt="{{ image.title }}">
+            </div>
             {% endfor %}
         {% endif %}
     </div>

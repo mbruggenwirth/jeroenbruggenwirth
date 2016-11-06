@@ -10,7 +10,7 @@
 
     > .flex-main {
         display: flex;
-        flex: 0 1 auto;
+        flex-grow: 1;
     }
 
     &.flex--normal { height: auto; }

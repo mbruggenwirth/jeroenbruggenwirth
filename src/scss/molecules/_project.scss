@@ -1,6 +1,15 @@
 .project {
+    position: static;
     display: flex;
     width: 100%;
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+
+    &.is-loading {
+        position: fixed;
+        top: -99999999;
+        opacity: 0;
+    }
 
     @include phone {
         display: block;
@@ -10,15 +19,23 @@
         display: flex;
         justify-content: space-between;
 
-        > .image { width: 49%; }
+        div {
+            width: 49%;
+
+            .image {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 
     &__info {
-        padding-top: 10px;
         padding-right: 40px;
         width: 300px;
         flex-grow: 1;
         flex-shrink: 0;
+
+        h1 { margin-top: -9px; }
 
         @include phone {
             width: 100%;

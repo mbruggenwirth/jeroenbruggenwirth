@@ -8,6 +8,5 @@
  */
 
 return array(
-    'devMode' => true,
     'cache' => false,
 );

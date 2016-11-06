@@ -35134,26 +35134,33 @@ require('gsap');
         const slider = this.slider = document.getElementById('slider');
 
         if (slider) {
-            const container = this.container = document.getElementById('slider').querySelector('.slider__container');
+            const slider = this.container = document.getElementById('slider');
+            const flexMainHeight = document.querySelector('.flex-main ').offsetHeight;
+            const container = this.container = slider.querySelector('.slider__container');
             const items = this.items = Array.from(slider.querySelectorAll('.slider__item'));
             const self = this;
             const begin = this.begin = 1;
+
+            document.querySelector('.project').classList.remove('is-loading');
+            
+            this.sliderHeight = flexMainHeight;
             this.nextBtn = document.querySelector('.slider__nav--next');
             this.prevBtn = document.querySelector('.slider__nav--prev');
             this.current = 0;
             this.sliderOffset = 0;
 
-            console.log(items.length);
-            if( items.length <= 1 ){
-                document.querySelector('.slider__navigation').classList += ' hidden';
+            if( items.length < 2 ){
+                document.querySelector('.slider__navigation').classList.add('hidden');
             }
 
-            imagesLoaded( items, function( instance ) {
+            var imgLoad = imagesLoaded( items );
+
+            imgLoad.on('done', function(){
                 self._setHeight();
                 self._setWidth();
                 self._bindEvents();
                 TweenMax.to(slider, .5, { alpha: 1, delay: 1 } );
-            });
+            })
 
             window.addEventListener('resize', _.debounce(function(){
                 self._setWidth();
@@ -35180,14 +35187,17 @@ require('gsap');
 
     Slider.prototype._setHeight = function () {
         this.items.forEach(function(item, key) {
+            console.log(this.sliderHeight);
             let img = item.querySelector('img');
-            img.style.height = this.slider.offsetHeight + "px";
+            img.style.height = this.sliderHeight + "px";
+            img.style.width = 'auto';
         }, this);
     }
 
     Slider.prototype._nextItem = function() {
         if(this.current < this.items.length - 1 ){
             const current = document.querySelector('[data-id="'+ this.current +'"]')
+            console.log(current);
             const nextId = this.current + 1;
             const target = document.querySelector('[data-id="'+ nextId +'"]')
             this.sliderOffset = this.sliderOffset + current.offsetWidth;
@@ -35200,6 +35210,7 @@ require('gsap');
     Slider.prototype._prevItem = function() {
         if(this.current > 0 ){
             const current = document.querySelector('[data-id="'+ this.current +'"]')
+            console.log(current);
             const prevId = this.current - 1;
             const target = document.querySelector('[data-id="'+ prevId +'"]')
             this.sliderOffset = this.sliderOffset - current.offsetWidth;
