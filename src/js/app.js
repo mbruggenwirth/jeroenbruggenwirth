@@ -91,11 +91,10 @@ require('gsap');
     Slider.prototype._prevItem = function() {
         if(this.current > 0 ){
             const current = document.querySelector('[data-id="'+ this.current +'"]')
-            console.log(current);
             const prevId = this.current - 1;
             const target = document.querySelector('[data-id="'+ prevId +'"]')
             this.sliderOffset = this.sliderOffset - current.offsetWidth;
-            TweenMax.to(this.container, .2, { x: -(this.sliderOffset + 20) });
+            TweenMax.to(this.container, .2, { x: -(this.sliderOffset) });
             this.current = prevId;
         }
     };
