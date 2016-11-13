@@ -12,6 +12,8 @@ require('gsap');
         }
 
         window.addEventListener('resize', _.debounce(function(){
+            const flexMainHeight = document.querySelector('.flex-main ').offsetHeight;
+            self.sliderHeight = flexMainHeight;
             self._setHeight();
             self._setWidth();
             self.current = 0;
