@@ -17,10 +17,10 @@
     &__item {
         display: inline-block;
         float: left;
-        padding-right: 20px;
+        padding-right: 100px;
         height: 100%;
         transition: opacity .3s ease-in-out;
-        cursor: pointer;
+
          > img {
              width: 1px;
              height: 1px;
@@ -39,7 +39,7 @@
     &__navigation {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         font-size: 10px;
         font-weight: bold;
         text-transform: uppercase;

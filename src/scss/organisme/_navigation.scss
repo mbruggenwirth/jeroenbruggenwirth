@@ -86,7 +86,6 @@
     &--has-children {
         position: relative;
 
-        &:hover,
         &.is-active {
             > .navigation__submenu {
                 pointer-events: all;
