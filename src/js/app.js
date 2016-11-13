@@ -60,6 +60,26 @@ require('gsap');
         this.prevBtn.addEventListener('click', function(){
             self._prevItem();
         })
+
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '38') {
+                self.current = 0;
+                self.sliderOffset = 0;
+                TweenMax.to(self.container, .2, { x: 0 });
+            }
+            else if (e.keyCode == '37') {
+               self._prevItem();
+            }
+            else if (e.keyCode == '39') {
+               self._nextItem();
+            }
+
+        }
     };
 
     Slider.prototype._setWidth = function () {
@@ -79,9 +99,7 @@ require('gsap');
         }, this);
     }
 
-    Slider.prototype._nextItem = function() {function functionName() {
-
-    }
+    Slider.prototype._nextItem = function() {
         if(this.current < this.items.length - 1 ){
             const current = document.querySelector('[data-id="'+ this.current +'"]')
             const nextId = this.current + 1;
